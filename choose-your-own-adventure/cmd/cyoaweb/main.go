@@ -28,7 +28,7 @@ func main() {
 		panic(err)
 	}
 
-	tpl := template.Must(template.New("").Parse(StoryTemplate))
+	tpl := template.Must(template.New("").Parse(storyTemplate))
 	h := adventure.NewHandler(story,
 		adventure.WithTemplate(tpl),
 		adventure.WithPathFunction(pathFunction),
@@ -48,7 +48,7 @@ func pathFunction(r *http.Request) string {
 	return path[len("/story/"):]
 }
 
-var StoryTemplate = `
+var storyTemplate = `
 <!DOCTYPE html>
 <html>
   <head>
